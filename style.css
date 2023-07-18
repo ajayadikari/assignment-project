@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant SC', serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+    --homecolor: rgb(0, 4, 41);
+    --green: rgb(26, 219, 129);
+}
+
+/* nav bar */
+
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    padding: 12px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: var(--homecolor);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+/* nav left */
+
+.logo {
+    width: 40px;
+    height: 52px;
+    margin: auto;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+
+}
+
+/* nav right */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* nav-items */
+
+ul li a {
+    text-decoration: none;
+    color: rgb(112, 119, 136);
+    font-size: 13px;
+    font-weight: 100;
+    padding: 0px 14px;
+    margin: 0px 5px;
+    letter-spacing: 1px;
+    transition: all 0.4s ease-in-out;
+}
+
+ul li a:hover {
+    color: rgb(181, 183, 188);
+}
+
+/* home container( mobiles image, text) */
+.main-home-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    background-color: transparent;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-container-upper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 0px 55px;
+    margin: 7% 0%;
+    /* background-color: red; */
+}
+/* home buttons and text on left side */
+.main-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 50%;
+    height: 1000px;
+    padding-left: 30px;
+    padding-top: 40px;
+    min-width: 500px;
+    height: 400px;
+}
+
+.main-left h1 {
+    color: rgb(255, 255, 255);
+    font-size: 38px;
+    letter-spacing: 1px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-left p {
+    color: rgb(197, 197, 203);
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.btn {
+    min-width: 40%;
+    height: 55px;
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btns {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* image on right of home */
+
+.main-right {
+    box-shadow: 1px 1px 30px 1px var(--homecolor);
+    min-width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.main-right img {
+    height: 100%;
+    width: 90%;
+}
+
+
+
+/* background animations for home */
+
+
+/* container for dots */
+#dots-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--homecolor);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.dot {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: moveUp linear infinite;
+}
+
+.box {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 3px;
+    background-color: #fff;
+    animation: box linear infinite;
+}
+
+/* animations for dots in background */
+
+@keyframes moveUp {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: -10%;
+    }
+}
+
+@keyframes box {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: -10%;
+    }
+}
+
+/* bottom wave effect on home */
+
+.wave-container {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    left: 0%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.waves {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    /* height: auto; */
+    bottom: 0;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 200%;
+    height: 70%;
+}
+
+.wave-2 {
+    animation: animate 15s linear infinite;
+    filter: opacity(0.6);
+    animation-delay: 1s;
+}
+
+.wave-1 {
+    position: relative;
+    left: 0;
+    filter: opacity(0.5);
+    z-index: -1;
+    animation-delay: 2s;
+    animation: animate 30s linear infinite;
+}
+
+.wave-3 {
+    filter: opacity(0.7);
+    animation: animate 10s linear infinite;
+    animation-delay: 3s;
+}
+
+.wave-4 {
+    filter: opacity(0.8);
+    animation: animate 5s linear infinite;
+    animation-delay: 4s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* wave styling ends here */
+
+
+
+/* side bar styling */
+.side-icons {
+    position: absolute;
+    right: 0;
+    display: none;
+}
+.disable{
+    display: none;
+}
+
+.side-icons i {
+    position: absolute;
+    right: 10px;
+}
+.after-body.container{
+    filter: contrast(1.5)
+}
+
+.sidebar{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 50%;
+    background-color: #fff;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease-in-out;
+    justify-content: flex-start;
+}
+.activate{
+    right: 0;
+}
+
+
+/* sidebar elements containing icon and link  */
+.ele{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ele a{
+    text-decoration: none;
+    font-size: 19px;
+    color: rgb(167, 163, 163);
+}
+.icons{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.links{
+    margin: 20px;
+}
+.sidebar .ele{
+
+    display: flex;
+
+}
+/* .sidebar p{
+    
+} */
+.sidebar a, i{
+    margin: 10px;
+}
+
+
+
+
+
+
+/* responsive design */
+
+
+@media screen and (max-width : 1100px) {
+    .after-body {
+        padding: 0px 30px;
+    }
+
+    .main-home-container {
+        /* justify-content: space-between; */
+        align-items: center;
+        padding-top: 60px;
+        margin-top: 100px;
+    }
+
+    .main-left h1,
+    p {
+        text-align: center;
+    }
+
+    .main-left h1 {
+        font-size: 30px;
+    }
+
+    .main-left {
+        height: 250px;
+        margin-bottom: 30px;
+    }
+
+    .main-left {
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .btns {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .btn {
+        padding-right: 0px;
+        margin-top: 10px;
+    }
+
+    .main-right {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
+
+    .main-right img {
+        width: 75%;
+    }
+}
+
+
+@media screen and (max-width : 900px) {
+    .waves {
+        height: 15%;
+    }
+}
+
+
+@media screen and (max-width : 768px) {
+    .nav-right {
+        display: none;
+    }
+
+    .side-icons {
+        display: block;
+    }
+}
+
+@media screen and (max-width : 750px) {
+    .btn {
+        min-width: 75%;
+        height: 45px;
+    }
+
+    .btns {
+        min-height: 120px;
+    }
+
+    .main-left h1,
+    p {
+        margin-bottom: 30px;
+    }
+
+    .main-left p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width : 560px) {
+    .main-container-upper {
+        padding: 0px 0px;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .main-left {
+        min-width: 395px;
+        margin-bottom: 30px;
+    }
+
+    .main-right {
+        margin: 30px 0px;
+    }
+
+    .waves {
+        height: 10%;
+    }
+}
+
+@media screen and (max-width : 414px) {
+    .sidebar{
+        width: 80%;
+    }
+}
